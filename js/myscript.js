@@ -68,11 +68,3 @@ let app = new Vue ({
         }
     }
 })
-
-if (this.newTask) {
-    this.tasks.push({
-      title: this.newTask,
-      completed: false
-    });
-    this.newTask = '';
-  }
