@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    font-family: Arial;
+    background-color: #f5f5f5;
+}
+
+header{
+    background-color: white;
+    margin:0;
+}
+
+.button{
+    border-bottom: 1px solid lightgray;
+}
+
+.aggiungi{
+    background-color: DodgerBlue;
+    color: white;
+    border: 1px solid DodgerBlue;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+
+h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h2{
+    margin-bottom: 0;
+}
+
+.title{
+    display: inline-block;
+}
+
+main{
+    width: 60%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+#list{
+    line-height: 40px;
+}
