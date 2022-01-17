@@ -9,21 +9,25 @@
     <title>vue-todolist</title>
 </head>
 <body>
-    <header>
-        <div id="headerlogo">
-            <h1>To do list</h1>
-        </div>
-    </header>
-    
-    <main>
-        <div id="container">
-            <div class="button">
-            <button class="add-task">Aggiungi</button>
-            
-        </div>  
+    <div id="headerlogo">
+        <h1>To do list</h1>
+    </div>
 
-        <div id="list">
-            <span><h2>New Task</h2></span>
+    <main>
+        <div id="miapp">
+            <div id="container">
+                <input type="text" v-model="azione">
+                <button @click="aggiungi">Aggiungi</button>  
+            </div>  
+
+            <div id="lista">
+                <ul>
+                    <li v-for="(element,index) in items">
+                        <span>{{element.text}}</span>
+                        <i class="fas fa-times" @click="togli(index)"></i>
+                    </li>
+                </ul>
+            </div>
         </div>                  
     </main>
 
