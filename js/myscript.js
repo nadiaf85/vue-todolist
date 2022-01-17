@@ -20,7 +20,8 @@
 // 1- oltre al click sul pulsante, intercettare anche il 
 //tasto ENTER per aggiungere il todo alla lista
 // 2- cliccando sul testo dell’item, invertire il valore 
-//della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+//della proprietà done del todo corrispondente (se done era uguale
+// a false, impostare true e viceversa)
 
 let app = new Vue ({
     el : '#miapp',
@@ -28,34 +29,50 @@ let app = new Vue ({
         azione: "",
         items: [
             {
-                text: 'Fare la spesa',
+                text: 'Quarterly Newsletter',
                 done: 'false',
             },
             {
-                text: 'Fare il bucato',
+                text: 'Recruiting blog post',
                 done: 'false'
             },
             {
-                text: 'gdfgfgdfgdf',
+                text: 'Mobile app launch',
                 done: 'false'
             },
             {
-                text: 'nbvnvnbv',
+                text: 'Interview John H.',
                 done: 'false'
             },
             {
-                text: 'rtytrytrytr',
+                text: 'Summit update to mobile storefronts',
                 done: 'false'
             },
         ]
     },
     methods: {
         aggiungi: function(){
-            this.items.push(this.azione);
-            this.azione = "";
-        }
-    },
+            this.items.push({
+                text:this.azione,
+            });
+        },
         togli: function(index){
-            this.items.splice(index);
-    },
+            this.items.splice(index,1);
+        },
+        checkDone: function(){
+            if(done==true){
+                return "active";
+            }else{
+                return ''
+            }
+        }
+    }
 })
+
+if (this.newTask) {
+    this.tasks.push({
+      title: this.newTask,
+      completed: false
+    });
+    this.newTask = '';
+  }
