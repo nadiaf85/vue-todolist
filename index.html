@@ -10,22 +10,20 @@
 </head>
 <body>
     <header>
-        <div id="headerlogo">
-            <h1>Todolist</h1>
-        </div>
+        <h1>Todolist</h1>
     </header>
 
     <main>
         <div id="miapp">
             <div id="container">
-                <input type="text" v-model="azione" @keyup.enter="aggiungi">
+                <input type="text" placeholder="nuovo todo" v-model="azione" @keyup.enter="aggiungi">
                 <button @click="aggiungi">Aggiungi</button>  
             </div>  
 
             <div id="lista">
                 <ul>
-                    <li v-for="(element,index) in items" @click="verificaAttivo">
-                        <span>{{element.text}}</span>
+                    <li v-for="(element,index) in items">
+                        <span :class="fatto(index)" @click="verificato(index)">{{element.text}}</span>
                         <i class="fas fa-times" @click="togli(index)"></i>
                     </li>
                 </ul>

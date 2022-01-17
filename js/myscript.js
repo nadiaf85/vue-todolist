@@ -32,26 +32,27 @@ let app = new Vue ({
     el : '#miapp',
     data: {
         azione: "",
+        active: false,
         items: [
             {
                 text: 'Quarterly Newsletter',
-                done: 'false',
+                done:  false,
             },
             {
                 text: 'Recruiting blog post',
-                done: 'false'
+                done:  false
             },
             {
                 text: 'Mobile app launch',
-                done: 'false'
+                done:  false
             },
             {
                 text: 'Interview John H.',
-                done: 'false'
+                done:  false
             },
             {
                 text: 'Summit update to mobile storefronts',
-                done: 'false'
+                done:  false
             },
         ]
     },
@@ -59,17 +60,23 @@ let app = new Vue ({
         aggiungi: function(){
             this.items.push({
                 text:this.azione,
+                done: false
             });
         },
         togli: function(index){
             this.items.splice(index,1);
         },
-        verificaAttivo: function(){
-            if(items.done==false){
-                return "active";
-            }else{
-                return '';
+        fatto: function(index){
+            if(this.items[index].done == true){
+                return "barrato";
             }
         },
+        verificato: function(index){
+            if(this.items[index].done == true){
+                this.items[index].done = false
+            } else { 
+                this.items[index].done = true
+            }
+        }
     }
 })
